@@ -15,9 +15,6 @@ rename-desktop-file: fnmap.desktop
 
 modules:
   - buildsystem: autotools
-    build-options:
-      build-args:
-        - --share=network
     name: nmap
     sources:
       - type: archive
