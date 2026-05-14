@@ -1,9 +1,10 @@
 app-id: com.krioltech.fnmap
 runtime: org.freedesktop.Platform
-runtime-version: "24.08"
+runtime-version: "25.08"
 sdk: org.freedesktop.Sdk
 command: fnmap
 separate-locales: false
+rename-desktop-file: fnmap.desktop
 finish-args:
   - --share=ipc
   - --socket=fallback-x11
@@ -11,8 +12,8 @@ finish-args:
   - --device=dri
   - --share=network
   - --filesystem=xdg-documents
-rename-desktop-file: fnmap.desktop
-
+cleanup:
+  - /share/man
 modules:
   - buildsystem: autotools
     name: nmap
@@ -34,7 +35,4 @@ modules:
       - type: archive
         url: https://github.com/gmckesey/fnmap-flatpak/raw/refs/tags/v1.3.4-1/archives/fnmap-1.3.4-1.x64.tar.gz
         sha256: 65d48ea108c2ce9ceb629c9b1b35469d0f40d3929d91aeb794279546f65c313e
-        dest: "fnmap-archive"
-
-
-
+        dest: fnmap-archive
